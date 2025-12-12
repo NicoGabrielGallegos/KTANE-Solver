@@ -8,7 +8,7 @@ export interface WiresModule {
     wires: Wire[]
 }
 
-export interface WireSolution {
+export interface WiresSolution {
     description: string
     wireIndex: number
 }
