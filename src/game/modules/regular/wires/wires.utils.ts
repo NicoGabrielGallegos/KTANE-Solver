@@ -1,4 +1,4 @@
-import type { Wire, WireColor } from "./wires.types.ts";
+import type { Wire, WireColor, WiresModule } from "./wires.types.ts";
 
 // export const isColor = (wire: Wire, color: WireColor): boolean => wire.color === color
 export const isRed = (wire: Wire): boolean => wire.color === "red"
@@ -27,3 +27,29 @@ export const hasBlueAt = (wires: Wire[], pos: number | "last"): boolean => hasCo
 export const hasBlackAt = (wires: Wire[], pos: number | "last"): boolean => hasColorAt(wires, pos, "black")
 export const hasYellowAt = (wires: Wire[], pos: number | "last"): boolean => hasColorAt(wires, pos, "yellow")
 export const hasWhiteAt = (wires: Wire[], pos: number | "last"): boolean => hasColorAt(wires, pos, "white")
+
+//export function createWire(color: WireColor): Readonly<Wire> {
+//    const wire = {
+//        color,
+//        isRed: color === "red",
+//        isBlue: color === "blue",
+//        isBlack: color === "black",
+//        isYellow: color === "yellow",
+//        isWhite: color === "white"
+//    }
+//
+//    return Object.freeze(wire)
+//}
+//
+// [WIP]
+//export function createWires(colors: WireColor[]): Readonly<WiresModule> {
+//    if (colors.length < 3 || colors.length > 6) {
+//        throw new Error("Número inválido de cables.");
+//    }
+//    
+//    const wires = colors.map(color => createWire(color))
+//    const wiresModule = {
+//        wires,
+//        countRed: () => wires.filter(isRed).length
+//    }
+//}

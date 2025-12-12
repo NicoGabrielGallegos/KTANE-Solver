@@ -1,5 +1,6 @@
 export type ButtonColor = "black" | "blue" | "red" | "white" | "yellow"
 export type ButtonLabel = "Abort" | "Detonate" | "Hold" | "Press"
+export type ButtonAction = "tap" | "hold"
 
 export type StripColor = "blue" | "red" | "white" | "yellow" | null
 
@@ -19,7 +20,7 @@ export interface TheButtonModule {
 
 export interface ButtonSolution {
     description: string
-    action: "tap" | "hold"
+    action: ButtonAction
 }
 
 export interface StripSolution {

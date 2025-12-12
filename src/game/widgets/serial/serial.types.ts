@@ -1,6 +1,6 @@
 export interface SerialNumber {
     string: string
-    hasVower: boolean
+    hasVowel: boolean
     //hasConsonant: boolean
     lastDigit: number
 }
