@@ -15,6 +15,5 @@ export interface KeypadModule {
 
 export interface KeypadSolution {
     description: string
-    positionOrder: KeyPosition[]
-    symbolOrder: KeySymbol[]
+    keys: Key[]
 }

@@ -12,10 +12,12 @@ export function createSerialNumber(value: string): Readonly<SerialNumber> {
         throw Error("El número de serie debe tener al menos una letra")
     }
 
+    const lastDigit = Number(value[value.length - 1])
+
     const serial = {
         string: value,
         hasVowel: /[aeiou]/i.test(value),
-        lastDigit: Number(value[value.length - 1])
+        lastDigit
     }
 
     return Object.freeze(serial)

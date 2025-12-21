@@ -28,6 +28,11 @@ export const hasBlackAt = (wires: Wire[], pos: number | "last"): boolean => hasC
 export const hasYellowAt = (wires: Wire[], pos: number | "last"): boolean => hasColorAt(wires, pos, "yellow")
 export const hasWhiteAt = (wires: Wire[], pos: number | "last"): boolean => hasColorAt(wires, pos, "white")
 
+export function createWire(color: WireColor): Readonly<Wire> {
+    const wire = { color }
+    return Object.freeze(wire)
+}
+
 //export function createWire(color: WireColor): Readonly<Wire> {
 //    const wire = {
 //        color,
