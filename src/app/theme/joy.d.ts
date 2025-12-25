@@ -44,6 +44,11 @@ declare module "@mui/joy/styles" {
                 background: string;
                 border: string;
             };
+            keyColor: {
+                background?: string;
+                border?: string;
+                textContrast: string;
+            };
         };
     }
 
@@ -89,6 +94,11 @@ declare module "@mui/joy/styles" {
             none?: {
                 background?: string;
                 border?: string;
+            };
+            keyColor: {
+                background?: string;
+                border?: string;
+                textContrast: string;
             };
         };
     }

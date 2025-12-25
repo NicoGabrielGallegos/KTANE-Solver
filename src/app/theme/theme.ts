@@ -46,6 +46,11 @@ const theme = extendTheme({
                         background: "#6b728000",
                         border: "#6b7280"
                     },
+                    keyColor: {
+                        background: "#e8d9c3",
+                        border: "#aa926f",
+                        textContrast: "#0A0804"
+                    },
                 }
             }
         },
@@ -92,6 +97,11 @@ const theme = extendTheme({
                     none: {
                         background: "#6b728000",
                         border: "#6b7280"
+                    },
+                    keyColor: {
+                        background: "#e8d9c3",
+                        border: "#aa926f",
+                        textContrast: "#0A0804"
                     },
                 }
             }

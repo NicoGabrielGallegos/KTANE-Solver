@@ -1,3 +1,5 @@
+import type { Key, KeyPosition, KeySymbol } from "./keypad.types"
+
 // const SYMBOLS = [" ", "©", "★", "☆", "ټ", "Җ", "Ω", "Ѭ", "ὦ", "ϗ", "б", "Ϟ", "Ѧ", "æ", "Ԇ", "Ӭ", "Ҋ", "Ѯ", "¿", "¶", "Ͼ", "Ͽ", "Ψ", "Ҩ", "҂", "Ϙ", "ƛ", "ѣ"]
 // const [
 //     EMPTY, COPYRIGHT, FILLED_STAR, HOLLOW_STAR, SMILEY_FACE, DOUBLE_K, OMEGA, SQUID_KNIFE, PUMPKIN, HOOK_N, SIX, SQUIGGLY_N, AT, AE, MELTED_THREE,
@@ -11,5 +13,10 @@
 //     [PITCHFORK, SMILEY_FACE, BT, RIGHT_C, PARAGRAPH, DRAGON, FILLED_STAR],
 //     [SIX, EURO, TRACKS, AE, PITCHFORK, N_WITH_HAT, OMEGA],
 // ]
+
+export function createKey(symbol: KeySymbol, position: KeyPosition): Readonly<Key> {
+    const key = { symbol, position }
+    return Object.freeze(key)
+}
 
 

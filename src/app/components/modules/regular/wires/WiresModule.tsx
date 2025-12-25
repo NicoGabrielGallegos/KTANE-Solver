@@ -15,8 +15,8 @@ export function WiresModule({ wires, onWireClick }: WiresModuleProps) {
                 {
                     wires.map((wire, i) => (
                         <WireView
+                            {...wire}
                             key={i}
-                            color={wire?.color}
                             onClick={(e) => onWireClick?.(e, i)}
                             sx={{ cursor: "pointer" }}
                         />
