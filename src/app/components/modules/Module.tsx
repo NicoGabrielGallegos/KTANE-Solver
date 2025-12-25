@@ -9,7 +9,18 @@ interface ModuleProps {
 
 export function Module({ children, variant = "outlined", sx }: ModuleProps) {
     return (
-        <Sheet variant={variant} sx={{ width: 512, height: 512, borderRadius: 16, ...sx }}>
+        <Sheet
+            variant={variant}
+            sx={{
+                width: 400,
+                height: 400,
+                borderRadius: 8,
+                border: "1px solid",
+                borderColor: "ktane.module.border",
+                backgroundColor: "ktane.module.background",
+                ...sx,
+            }}
+        >
             {children}
         </Sheet>
     )

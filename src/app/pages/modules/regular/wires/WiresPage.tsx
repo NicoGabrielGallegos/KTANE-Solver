@@ -2,8 +2,7 @@ import { useState } from "react"
 import type { Wire, WireColor } from "../../../../../game/modules/regular/wires/wires.types"
 import { createWire } from "../../../../../game/modules/regular/wires/wires.utils"
 import { WiresModule } from "../../../../components/modules/regular/wires/WiresModule"
-import { Box, Dropdown, Menu, MenuItem } from "@mui/joy"
-import theme from "../../../../theme/theme"
+import { Box, Menu, MenuItem } from "@mui/joy"
 
 const COLORS: (WireColor | null)[] = [
     null,
@@ -24,6 +23,7 @@ export function WiresPage() {
     const handleWireClick = (event: React.MouseEvent<HTMLDivElement>, index: number) => {
         setAnchorWire(event.currentTarget)
         setActiveWireIndex(index)
+        event.stopPropagation()
     }
 
     const handleSelectColor = (color: WireColor | null) => {
@@ -41,7 +41,10 @@ export function WiresPage() {
 
     return (
         <>
-            <WiresModule wires={wires} onWireClick={handleWireClick} />
+            <WiresModule
+                wires={wires}
+                onWireClick={handleWireClick}
+            />
             <Menu
                 open={open}
                 anchorEl={anchorWire}
@@ -55,12 +58,12 @@ export function WiresPage() {
                     >
                         <Box
                             sx={{
-                                width: 32,
-                                height: 32,
+                                width: 24,
+                                height: 24,
                                 borderRadius: "50%",
                                 border: `1px black ${color ? "solid" : "dashed"}`,
-                                borderColor: `wires.${[color ? color : "none"]}.border`,
-                                backgroundColor: `wires.${[color ? color : "none"]}.background`,
+                                borderColor: `ktane.${[color ? color : "none"]}.border`,
+                                backgroundColor: `ktane.${[color ? color : "none"]}.background`,
                             }}
                         />
                     </MenuItem>

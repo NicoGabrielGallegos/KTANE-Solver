@@ -1,4 +1,4 @@
-import type { Wire, WireColor, WiresModule } from "./wires.types.ts";
+import type { Wire, WireColor } from "./wires.types.ts";
 
 // export const isColor = (wire: Wire, color: WireColor): boolean => wire.color === color
 export const isRed = (wire: Wire): boolean => wire.color === "red"

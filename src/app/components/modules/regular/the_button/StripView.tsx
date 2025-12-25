@@ -1,21 +1,20 @@
 import type { SxProps } from "@mui/joy/styles/types"
-import type { WireColor } from "../../../../../game/modules/regular/wires/wires.types"
 import { Box } from "@mui/joy"
+import type { StripColor } from "../../../../../game/modules/regular/the_button/the_button.types"
 
-interface WireViewProps {
-    color?: WireColor
+interface StripViewProps {
+    color?: StripColor
     onClick?: React.MouseEventHandler<HTMLDivElement>
     sx?: SxProps
 }
 
-export function WireView({ color, onClick, sx }: WireViewProps) {
+export function StripView({ color, onClick, sx }: StripViewProps) {
     return (
         <Box
-            onClick={(e) => onClick?.(e)}
+            onClick={onClick}
             sx={{
-                width: "100%",
-                height: 20,
-                borderRadius: 10,
+                width: 40,
+                height: 200,
                 ...sx,
                 border: `1px ${color ? "solid" : "dashed"}`,
                 borderColor: `ktane.${[color ? color : "none"]}.border`,

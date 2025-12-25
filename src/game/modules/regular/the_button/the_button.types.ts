@@ -1,5 +1,5 @@
 export type ButtonColor = "black" | "blue" | "red" | "white" | "yellow"
-export type ButtonLabel = "Abort" | "Detonate" | "Hold" | "Press"
+export type ButtonLabel = "Abortar" | "Detonar" | "Mantener" | "Presionar"
 export type ButtonAction = "tap" | "hold"
 
 export type StripColor = "blue" | "red" | "white" | "yellow" | null

@@ -5,7 +5,7 @@ import { WireView } from "./WireView"
 
 interface WiresModuleProps {
     wires: (Wire | null)[]
-    onWireClick: (event: React.MouseEvent<HTMLDivElement>, index: number) => void
+    onWireClick?: (event: React.MouseEvent<HTMLDivElement>, index: number) => void
 }
 
 export function WiresModule({ wires, onWireClick }: WiresModuleProps) {
@@ -17,7 +17,7 @@ export function WiresModule({ wires, onWireClick }: WiresModuleProps) {
                         <WireView
                             key={i}
                             color={wire?.color}
-                            onClick={(e) => onWireClick(e, i)}
+                            onClick={(e) => onWireClick?.(e, i)}
                             sx={{ cursor: "pointer" }}
                         />
                     ))

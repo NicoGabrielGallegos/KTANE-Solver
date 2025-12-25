@@ -2,15 +2,15 @@ import type { BombEdgework } from "../../../bomb/bomb.types";
 import { countTotalBatteries } from "../../../widgets/batteries/batteries.utils";
 import { hasIndicator } from "../../../widgets/indicators/indicators.utils";
 import type { Button, ButtonSolution, Strip, StripSolution } from "./the_button.types";
-import { isBlue, isRed, isWhite, isYellow, saysAbort, saysDetonate, saysHold } from "./the_button.utils";
+import { isBlue, isRed, isWhite, isYellow, saysAbortar, saysDetonar, saysMantener } from "./the_button.utils";
 
 export function solveButton(button: Button, edgework: BombEdgework): ButtonSolution {
     const { batteries, indicators } = edgework
 
-    if (isRed(button) && saysHold(button) || countTotalBatteries(batteries) >= 2 && saysDetonate(button)) {
+    if (isRed(button) && saysMantener(button) || countTotalBatteries(batteries) >= 2 && saysDetonar(button)) {
         return { description: "Presionar y soltar", action: "tap" }
     }
-    if (isBlue(button) && saysAbort(button) || hasIndicator(indicators, {label: "CAR", isLit: true}) && isWhite(button)) {
+    if (isBlue(button) && saysAbortar(button) || hasIndicator(indicators, {label: "CAR", isLit: true}) && isWhite(button)) {
         return { description: "Mantener y mirar franja", action: "hold" }
     }
     if (countTotalBatteries(batteries) >= 3 && hasIndicator(indicators, {label: "FRK", isLit: true})) {

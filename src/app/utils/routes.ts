@@ -1,4 +1,5 @@
 export const ROUTES = {
     ROOT: "/",
-    WIRES: "/wires"
+    WIRES: "/wires",
+    THE_BUTTON: "/the_button"
 }
